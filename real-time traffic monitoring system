@@ -1,0 +1,9 @@
+def get_traffic_data(start_point, destination):
+    # Make API call to retrieve traffic info
+    api_url = f"https://maps.googleapis.com/maps/api/directions/json?origin={start_point}&destination={destination}&key=YOUR_API_KEY"
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        traffic_info = response.json()
+        return traffic_info
+    else:
+        return None
